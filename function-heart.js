@@ -1,7 +1,23 @@
 e = [];// trails
 h = [];// heart path
-O = c.width = innerWidth;
-Q = c.height = innerHeight;
+
+// Function to resize canvas for mobile
+function resizeCanvas() {
+	O = c.width = window.innerWidth;
+	Q = c.height = window.innerHeight;
+
+	// Recalculate heart path for new dimensions
+	h = [];
+	for( i = 0; i <Y; i+= .2 ) {
+		h.push([
+			O/2 + 180*M.pow(M.sin(i), 3),
+			Q/2 + 10 * (-(15*C(i) - 5*C(2*i) - 2*C(3*i) - C(4*i)))
+		])
+	}
+}
+
+O = c.width = window.innerWidth;
+Q = c.height = window.innerHeight;
 
 v = 32; // num trails, num particles per trail & num nodes in heart path
 M = Math;
@@ -117,3 +133,13 @@ function loop(){
 	requestAnimationFrame(doit);
 	loop();
 }());
+
+// Handle window resize for mobile orientation changes
+window.addEventListener('resize', function() {
+	resizeCanvas();
+});
+
+// Handle orientation change on mobile
+window.addEventListener('orientationchange', function() {
+	setTimeout(resizeCanvas, 100);
+});
