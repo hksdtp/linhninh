@@ -9,14 +9,23 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 	</head>
 	<body>
-      <br>
     <div id="obal">
       <canvas id="c"></canvas>
+      <div id="text-overlay">
+        <h1 class="name-text">Linh</h1>
+        <div class="floating-hearts">
+          <span class="heart-icon">💖</span>
+          <span class="heart-icon">💕</span>
+          <span class="heart-icon">💗</span>
+          <span class="heart-icon">💝</span>
+          <span class="heart-icon">💘</span>
+        </div>
+      </div>
       <script>
         var b = document.body;
         var c = document.getElementsByTagName('canvas')[0];
         var a = c.getContext('2d');
-        document.body.clientWidth; 
+        document.body.clientWidth;
       </script>
     </div>
     <script src="function-heart.js"></script>

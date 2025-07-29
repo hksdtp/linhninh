@@ -40,9 +40,10 @@ while (i < v ) {
 	//b = R() * r;
 	//g = R() * b;
 
-	H = i/v * 80 + 280;
-	S = R() * 40 + 60;
-	B = R() * 60 + 20;
+	// Enhanced color palette for more beautiful hearts
+	H = i/v * 60 + 300; // Pink to purple range
+	S = R() * 30 + 70;  // Higher saturation
+	B = R() * 40 + 60;  // Brighter colors
 
 	f = []; // create new trail
 
@@ -78,7 +79,8 @@ function render(_) { // draw particle
 
 function loop(){
 
-	a.fillStyle = "rgba(0,0,0,.2)"; // clear screen
+	// Enhanced background with subtle gradient effect
+	a.fillStyle = "rgba(26,0,51,.15)"; // Darker purple fade for magical effect
 	a.fillRect(0,0,O,Q);
 
 	i = v;
