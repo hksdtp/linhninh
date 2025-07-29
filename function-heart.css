@@ -37,25 +37,34 @@ body {
   transform: translate(-50%, -50%);
   z-index: 10;
   pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .name-text {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 4rem;
-  font-weight: bold;
+  font-family: 'Dancing Script', 'Brush Script MT', 'Lucida Handwriting', cursive;
+  font-size: 5rem;
+  font-weight: 600;
   color: transparent;
-  background: linear-gradient(45deg, #ff6b9d, #ffc3e0, #ff9a9e, #fad0c4);
-  background-size: 400% 400%;
+  background: linear-gradient(135deg, #ff6b9d, #c471ed, #f64f59, #ff9a9e, #ffecd2);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
-  text-shadow: 0 0 30px rgba(255, 107, 157, 0.8),
-               0 0 60px rgba(255, 107, 157, 0.6),
-               0 0 90px rgba(255, 107, 157, 0.4);
-  animation: gradientShift 3s ease-in-out infinite,
-             textGlow 2s ease-in-out infinite alternate,
-             textFloat 4s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255, 107, 157, 0.9),
+               0 0 40px rgba(196, 113, 237, 0.7),
+               0 0 60px rgba(255, 107, 157, 0.5),
+               0 0 80px rgba(196, 113, 237, 0.3);
+  animation: gradientShift 4s ease-in-out infinite,
+             textGlow 3s ease-in-out infinite alternate,
+             textFloat 5s ease-in-out infinite;
   margin: 0;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  position: relative;
+  filter: drop-shadow(0 4px 8px rgba(255, 107, 157, 0.3));
 }
 
 
@@ -79,23 +88,30 @@ body {
 
 @keyframes textGlow {
   0% {
-    text-shadow: 0 0 30px rgba(255, 107, 157, 0.8),
-                 0 0 60px rgba(255, 107, 157, 0.6),
-                 0 0 90px rgba(255, 107, 157, 0.4);
+    text-shadow: 0 0 20px rgba(255, 107, 157, 0.9),
+                 0 0 40px rgba(196, 113, 237, 0.7),
+                 0 0 60px rgba(255, 107, 157, 0.5),
+                 0 0 80px rgba(196, 113, 237, 0.3);
+    filter: drop-shadow(0 4px 8px rgba(255, 107, 157, 0.3));
   }
   100% {
-    text-shadow: 0 0 40px rgba(255, 107, 157, 1),
-                 0 0 80px rgba(255, 107, 157, 0.8),
-                 0 0 120px rgba(255, 107, 157, 0.6);
+    text-shadow: 0 0 30px rgba(255, 107, 157, 1),
+                 0 0 50px rgba(196, 113, 237, 0.9),
+                 0 0 70px rgba(255, 107, 157, 0.7),
+                 0 0 90px rgba(196, 113, 237, 0.5);
+    filter: drop-shadow(0 6px 12px rgba(255, 107, 157, 0.5));
   }
 }
 
 @keyframes textFloat {
   0%, 100% {
-    transform: translate(-50%, -50%) translateY(0px);
+    transform: translateY(0px) scale(1);
   }
-  50% {
-    transform: translate(-50%, -50%) translateY(-10px);
+  33% {
+    transform: translateY(-8px) scale(1.02);
+  }
+  66% {
+    transform: translateY(-4px) scale(1.01);
   }
 }
 
@@ -155,7 +171,12 @@ body {
   }
 
   .name-text {
-    font-size: 3rem;
+    font-size: 4rem;
+  }
+
+  #text-overlay {
+    width: 100vw;
+    height: 100vh;
   }
 }
 
@@ -169,6 +190,18 @@ body {
     height: 98vh;
   }
 
+  .name-text {
+    font-size: 3rem;
+    letter-spacing: 0.03em;
+  }
+
+  #text-overlay {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 320px) {
   .name-text {
     font-size: 2.5rem;
   }
