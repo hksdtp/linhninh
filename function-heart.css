@@ -58,51 +58,7 @@ body {
   letter-spacing: 0.1em;
 }
 
-.floating-hearts {
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  height: 200px;
-}
 
-.heart-icon {
-  position: absolute;
-  font-size: 1.5rem;
-  animation: floatHeart 6s ease-in-out infinite;
-  opacity: 0.8;
-}
-
-.heart-icon:nth-child(1) {
-  left: 10%;
-  animation-delay: 0s;
-  animation-duration: 5s;
-}
-
-.heart-icon:nth-child(2) {
-  left: 30%;
-  animation-delay: 1s;
-  animation-duration: 6s;
-}
-
-.heart-icon:nth-child(3) {
-  left: 50%;
-  animation-delay: 2s;
-  animation-duration: 7s;
-}
-
-.heart-icon:nth-child(4) {
-  left: 70%;
-  animation-delay: 3s;
-  animation-duration: 5.5s;
-}
-
-.heart-icon:nth-child(5) {
-  left: 90%;
-  animation-delay: 4s;
-  animation-duration: 6.5s;
-}
 
 .heart {
   fill: red;
@@ -143,28 +99,7 @@ body {
   }
 }
 
-@keyframes floatHeart {
-  0% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 0.8;
-  }
-  25% {
-    transform: translateY(-20px) rotate(90deg);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-40px) rotate(180deg);
-    opacity: 0.9;
-  }
-  75% {
-    transform: translateY(-20px) rotate(270deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0px) rotate(360deg);
-    opacity: 0.8;
-  }
-}
+
 
 @keyframes pulse {
   0% {
@@ -222,10 +157,6 @@ body {
   .name-text {
     font-size: 3rem;
   }
-
-  .floating-hearts {
-    width: 250px;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -240,13 +171,5 @@ body {
 
   .name-text {
     font-size: 2.5rem;
-  }
-
-  .floating-hearts {
-    width: 200px;
-  }
-
-  .heart-icon {
-    font-size: 1.2rem;
   }
 }
